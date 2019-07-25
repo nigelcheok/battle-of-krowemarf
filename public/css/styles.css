@@ -1,6 +1,15 @@
+.position-absolute {
+    position: absolute;
+}
+
+.position-relative {
+    position: relative;
+}
+
 .vertical-align {
     position: absolute;
     top: 50%;
+    transform: translateY(-50%);
 }
 
 .font-size-small {

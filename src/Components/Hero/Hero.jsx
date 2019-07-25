@@ -5,13 +5,14 @@ export function Hero(props) {
     <div>
       {/*<img src={props.image}/>*/}
       <div style={HeroImageStyle(props.image)}>
-        <div className="container">
-          <div className="d-flex align-items-center" style={OverlayStyle()}>
-            <div style={HeadingStyle()}>
-              <div className="text-white font-weight-bold">{ props.title }</div>
-              <div className="text-white font-size-small font-weight-light">{ props.description }</div>
+        <div style={OverlayStyle()}/>
+          <div className="container" style={ContainerStyle()}>
+            <div className="position-absolute vertical-align">
+                <div style={HeadingStyle()}>
+                  <div className="text-white font-weight-bold">{ props.title }</div>
+                  <div className="text-white font-size-small font-weight-light">{ props.description }</div>
+                </div>
             </div>
-          </div>
         </div>
       </div>
     </div>
@@ -32,19 +33,24 @@ function HeroImageStyle(imageUrl) {
 
 function OverlayStyle() {
   return {
+    position: 'absolute',
+    height: '500px',
     width: '75%',
     background: 'linear-gradient(to right, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0))',
   }
 }
 
-function HeadingStyle() {
+function ContainerStyle() {
   return {
-    // position: 'absolute',
-    // top: '50%',
-    fontSize: '4rem',
-    letterSpacing: '1px',
-    // transform: 'translateY(-50%)',
+    position: 'relative',
+    height: '500px',
+    width: '100%',
   }
 }
 
-// function
+function HeadingStyle() {
+  return {
+    fontSize: '4rem',
+    letterSpacing: '1px',
+  }
+}

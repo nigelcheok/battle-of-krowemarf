@@ -13,6 +13,5 @@ function SectionHeaderStyle() {
     fontSize: '2.25rem',
     color: 'rgb(37, 39, 41)',
     fontWeight: '600',
-    letterSpacing: '.5px',
   }
 }
