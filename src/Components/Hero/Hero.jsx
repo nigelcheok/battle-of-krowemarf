@@ -26,8 +26,6 @@ function HeroImageStyle(imageUrl) {
     height: '500px',
     width: '100vw',
     backgroundSize: 'cover',
-    // backgroundColor: 'rgba(66,66,66,.4)',
-    // backgroundBlendMode: 'multiply',
   }
 }
 
