@@ -21,7 +21,7 @@ export function Home() {
         </div>
       </div>
       <div className="container">
-        <Card/>
+        <Card title="React" description="By Facebook"/>
       </div>
     </div>
   );
