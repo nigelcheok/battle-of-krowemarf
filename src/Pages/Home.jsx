@@ -11,9 +11,7 @@ export function Home() {
   return (
     <div>
       <Navbar/>
-      {/*<h1>Battle of Krowemarf</h1>*/}
-      <Hero image={HeroImage} title="Battle of Krowemarf" description="The battle between React, Angular and Vue."/>
-      {/*<Section title="React War Room" description="You are in Team React."/>*/}
+      {/*<Hero image={HeroImage} title="Battle of Krowemarf" description="The battle between React, Angular and Vue."/>*/}
       <div className="container">
         <div style={SectionStyle()}>
           <SectionHeader text="React War Room"/>
