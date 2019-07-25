@@ -3,8 +3,8 @@ import Logo from '../../Images/wework.png';
 
 export function Navbar() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-white">
-      <div className="container">
+    <nav className="navbar navbar-expand-lg navbar-light bg-white" style={NavbarStyle()}>
+      <div className="container d-flex align-items-center">
       <a className="navbar-brand" href="#">
         <img src={Logo} height="27"/>
       </a>
@@ -14,4 +14,10 @@ export function Navbar() {
       </div>
     </nav>
   );
+}
+
+function NavbarStyle() {
+  return {
+    height: '80px',
+  };
 }

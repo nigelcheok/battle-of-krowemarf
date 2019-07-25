@@ -13,3 +13,9 @@ export function Card(props) {
     </div>
   );
 }
+
+function CardBodyStyle() {
+  return {
+    backgroundColor: 'rgba(37,39,41,.01)',
+  }
+}
