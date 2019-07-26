@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import { Home } from './Pages/Home';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 function App() {
   return (

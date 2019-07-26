@@ -11,7 +11,8 @@ export function Navbar(match) {
       {/*</a>*/}
 
       <Link className="navbar-brand" to={`${match.url}`}>
-        <img src={Logo} height="27"/>
+        <img src={Logo} height="27" style={LogoStyle()}/>
+        <span style={BrandTextStyle()}>| Battle of Krowemarf</span>
       </Link>
 
       {/*<button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">*/}
@@ -27,4 +28,19 @@ function NavbarStyle() {
     height: '80px',
     borderBottom: '1px solid rgba(37, 39, 41, 0.1)',
   };
+}
+
+function LogoStyle() {
+  return {
+    display: 'inline-block',
+    transform: 'translateY(-5px)',
+  }
+}
+
+function BrandTextStyle() {
+  return {
+    display: 'inline-block',
+    fontSize: '20px',
+    fontWeight: '600',
+  }
 }

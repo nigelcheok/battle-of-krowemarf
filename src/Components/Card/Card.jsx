@@ -1,14 +1,15 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export function Card(props) {
   return (
     <div className="card border-square">
       {/*<img src="..." className="card-img-top" alt="...">*/}
-        <div className="card-body" style={CardBodyStyle()}>
-          <FontAwesomeIcon icon="coffee" />
-          <h5 className="card-title" style={CardTitleStyle()}>{ props.title }</h5>
-          <p className="card-text" style={CardDescriptionStyle()}>{ props.description }</p>
+        <div className="card-body d-flex" style={CardBodyStyle()}>
+          <div className="fab fa-react fa-3x align-self-center mr-3"/>
+          <div>
+            <h5 className="card-title" style={CardTitleStyle()}>{ props.title }</h5>
+            <p className="card-text" style={CardDescriptionStyle()}>{ props.description }</p>
+          </div>
           {/*<a href="#" className="btn btn-primary">Go somewhere</a>*/}
         </div>
       <div className="card-footer" style={CardFooterStyle()}>
