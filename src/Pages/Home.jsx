@@ -28,7 +28,10 @@ export function Home() {
 }
 
 function getClans() {
-  ClanService.getReactClan().then(response => {
+  ClanService.getRepoStats('facebook', 'react').then(response => {
+    console.log(response);
+  });
+  ClanService.getRepoPulls('facebook','react').then(response => {
     console.log(response);
   });
 }

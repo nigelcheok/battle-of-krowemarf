@@ -9,7 +9,18 @@ const apiUrl = 'https://api.github.com';
 // };
 
 export class ClanService {
-  static getReactClan() {
-    return axios.get(apiUrl + '/repos/facebook/react');
+  static getRepoStats(owner, repoName) {
+    return axios.get(`${apiUrl}/repos/${owner}/${repoName}`);
   }
+
+  // static getReactClan() {
+  //   // return axios.get(apiUrl + '/repos/facebook/react');
+  //   return this.getRepoStats('facebook', 'react');
+  // }
+
+  static getRepoPulls(owner, repoName) {
+    return axios.get(`${apiUrl}/repos/${owner}/${repoName}/pulls`);
+  }
+
+
 }
