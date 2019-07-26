@@ -7,6 +7,8 @@ import { SectionHeader } from '../Components/Section/SectionHeader/SectionHeader
 import { SectionSubheader } from '../Components/Section/SectionSubheader/SectionSubheader';
 import { Card } from '../Components/Card/Card';
 
+import { ClanService } from '../Services/ClanService';
+
 export function Home() {
   return (
     <div>
@@ -19,10 +21,16 @@ export function Home() {
         </div>
       </div>
       <div className="container">
-        <Card title="React" description="By Facebook"/>
+        <Card title="React" description="By Facebook" onClick={getClans()}/>
       </div>
     </div>
   );
+}
+
+function getClans() {
+  ClanService.getReactClan().then(response => {
+    console.log(response);
+  });
 }
 
 function SectionStyle() {
