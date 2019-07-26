@@ -21,19 +21,14 @@ export function Home() {
         </div>
       </div>
       <div className="container">
-        <Card title="React" description="By Facebook" onClick={getClans()}/>
+        <Card title="React" description="By Facebook" onClick={getClans.bind(this)}/>
       </div>
     </div>
   );
 }
 
 function getClans() {
-  ClanService.getRepoStats('facebook', 'react').then(response => {
-    console.log(response);
-  });
-  ClanService.getRepoPulls('facebook','react').then(response => {
-    console.log(response);
-  });
+  console.log(ClanService.getClanInfo('facebook', 'react'));
 }
 
 function SectionStyle() {

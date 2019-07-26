@@ -11,7 +11,7 @@ export function Navbar(match) {
       {/*</a>*/}
 
       <Link className="navbar-brand" to={`${match.url}`}>
-        <img src={Logo} height="27" style={LogoStyle()}/>
+        <img src={Logo} height="27" style={LogoStyle()} alt="logo"/>
         <span style={BrandTextStyle()}>| Battle of Krowemarf</span>
       </Link>
 
