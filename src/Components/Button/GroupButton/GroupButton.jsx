@@ -3,11 +3,11 @@ import React from 'react';
 export function GroupButton(props) {
   return (
     <div className="btn-group" role="group" aria-label="" style={ GroupButtonStyle() }>
-      <button type="button" className="btn btn-outline-secondary font-weight-bold" disabled>
+      <button type="button" className="btn btn-outline-dark font-weight-bold" disabled>
         <div className={`fa ${props.icon} fa-1x`} style={GroupButtonIconStyle()}/>
         { props.label }
       </button>
-      <button type="button" className="btn btn-outline-secondary font-weight-bold" disabled>{ props.value }</button>
+      <button type="button" className="btn btn-outline-dark font-weight-bold" disabled>{ props.value }</button>
     </div>
   );
 }

@@ -10,7 +10,12 @@ import { Card } from '../Components/Card/Card';
 import { ClanService } from '../Services/ClanService';
 import ClanConstants from '../Constants/ClanConstants';
 
+import { TeamToggleButton } from "../Components/Button/TeamToggleButton/TeamToggleButton";
+
 export function Home() {
+
+  const [Clans, setClans] = useState(undefined);
+  const [currClan, setCurrClan] = useState('React');
 
   async function getAllClans() {
     const allClansPromises = ClanConstants.allClans.map(clan => {
@@ -26,8 +31,9 @@ export function Home() {
     // setClans([reactClan, vueClan, angularClan]);
   }
 
-  const [Clans, setClans] = useState(undefined);
-  const [currClan, setCurrClan] = useState('react');
+  function handleClanChange(newClan) {
+    setCurrClan(newClan);
+  }
 
   // componentDidMount
   useEffect( () => {
@@ -40,7 +46,10 @@ export function Home() {
       {/*<Hero image={HeroImage} title="Battle of Krowemarf" description="The battle between React, Angular and Vue."/>*/}
       <div className="container">
         <div style={SectionStyle()}>
-          <SectionHeader text="React War Room"/>
+          <div className="d-flex justify-content-between">
+            <SectionHeader text={`${currClan} War Room`}/>
+            <TeamToggleButton teams={ClanConstants.allClans} currTeam={currClan} onClanChange={handleClanChange}/>
+          </div>
           <SectionSubheader text="Allies"/>
         </div>
       </div>

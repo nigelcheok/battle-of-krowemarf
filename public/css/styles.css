@@ -6,6 +6,10 @@
     position: relative;
 }
 
+.display-inline-block {
+    display: inline-block;
+}
+
 .vertical-align {
     position: absolute;
     top: 50%;
@@ -14,6 +18,10 @@
 
 .font-size-small {
     font-size: 1.5rem;
+}
+
+.font-size-smaller {
+    font-size: 1.2rem;
 }
 
 .border-square {
