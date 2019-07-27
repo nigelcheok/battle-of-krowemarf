@@ -19,3 +19,7 @@
 .border-square {
     border-radius: 0 !important;
 }
+
+.vertical-flip {
+    transform: scaleY(-1);
+}
