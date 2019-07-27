@@ -30,6 +30,7 @@ function CardBodyStyle() {
 function CardTitleStyle() {
   return {
     fontSize: '1.25rem',
+    marginBottom: '0',
   }
 }
 

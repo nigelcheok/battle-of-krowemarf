@@ -4,7 +4,7 @@ import { GroupButton } from '../../Button/GroupButton/GroupButton';
 
 export function CardFooter(props) {
   return (
-    <div className="card-footer">
+    <div className="card-footer" style={CardFooterStyle()}>
       <GroupButton label="Stars" value="0" icon="fa-star"/>
       <GroupButton label="Issues" value="0" icon="fa-exclamation-circle"/>
       <GroupButton label="Forks" value="0" icon="fa-code-branch"/>
