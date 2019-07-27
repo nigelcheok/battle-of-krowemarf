@@ -1,6 +1,6 @@
 import React from 'react';
 import Logo from '../../Images/wework.png';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export function Navbar(match) {
   return (

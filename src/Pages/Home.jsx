@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Navbar } from '../Components/Navbar/Navbar';
-import { Hero } from '../Components/Hero/Hero';
-import HeroImage from '../Images/hero5.jpg'
+// import { Hero } from '../Components/Hero/Hero';
+// import HeroImage from '../Images/hero5.jpg'
 // import { Section } from '../Components/Section/Section';
 import { SectionHeader } from '../Components/Section/SectionHeader/SectionHeader';
 import { SectionSubheader } from '../Components/Section/SectionSubheader/SectionSubheader';
@@ -10,6 +10,25 @@ import { Card } from '../Components/Card/Card';
 import { ClanService } from '../Services/ClanService';
 
 export function Home() {
+
+  async function getAllClans() {
+    const reactClan = await ClanService.getClanInfo('facebook', 'react');
+    const angularClan = await ClanService.getClanInfo('angular', 'angular.js');
+    const vueClan = await ClanService.getClanInfo('vuejs', 'vue');
+
+    return [reactClan, angularClan, vueClan];
+  }
+
+  const [Clans, setClans] = useState(undefined);
+
+  // const updateClans = () => {
+  //   setClans(getClans());
+  // };
+
+  useEffect(() => {
+    setClans(getAllClans());
+  });
+
   return (
     <div>
       <Navbar/>
@@ -21,14 +40,10 @@ export function Home() {
         </div>
       </div>
       <div className="container">
-        <Card title="React" description="By Facebook" onClick={getClans.bind(this)}/>
+        <Card title="React" description="By Facebook"/>
       </div>
     </div>
   );
-}
-
-function getClans() {
-  console.log(ClanService.getClanInfo('facebook', 'react'));
 }
 
 function SectionStyle() {
