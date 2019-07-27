@@ -1,4 +1,5 @@
 import React from 'react';
+import { CardFooter } from './CardFooter/CardFooter';
 
 export function Card(props) {
   return (
@@ -12,9 +13,10 @@ export function Card(props) {
           </div>
           {/*<a href="#" className="btn btn-primary">Go somewhere</a>*/}
         </div>
-      <div className="card-footer" style={CardFooterStyle()}>
-        test
-      </div>
+      <CardFooter/>
+      {/*<div className="card-footer" style={CardFooterStyle()}>*/}
+        {/*test*/}
+      {/*</div>*/}
     </div>
   );
 }
@@ -37,9 +39,9 @@ function CardDescriptionStyle() {
     color: 'rgb(142, 142, 143)',
   }
 }
-
-function CardFooterStyle() {
-  return {
-    borderTop: '0',
-  }
-}
+//
+// function CardFooterStyle() {
+//   return {
+//     borderTop: '0',
+//   }
+// }

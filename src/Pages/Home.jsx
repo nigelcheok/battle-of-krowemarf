@@ -16,17 +16,14 @@ export function Home() {
     const angularClan = await ClanService.getClanInfo('angular', 'angular.js');
     const vueClan = await ClanService.getClanInfo('vuejs', 'vue');
 
-    return [reactClan, angularClan, vueClan];
+    setClans([reactClan, angularClan, vueClan]);
   }
 
   const [Clans, setClans] = useState(undefined);
 
-  // const updateClans = () => {
-  //   setClans(getClans());
-  // };
-
-  useEffect(() => {
-    setClans(getAllClans());
+  // componentDidMount
+  useEffect( () => {
+    getAllClans();
   });
 
   return (
