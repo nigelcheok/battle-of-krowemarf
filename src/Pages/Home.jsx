@@ -8,15 +8,22 @@ import { SectionSubheader } from '../Components/Section/SectionSubheader/Section
 import { Card } from '../Components/Card/Card';
 
 import { ClanService } from '../Services/ClanService';
+import ClanConstants from '../Constants/ClanConstants';
 
 export function Home() {
 
   async function getAllClans() {
-    const reactClan = await ClanService.getClanInfo('facebook', 'react');
-    const vueClan = await ClanService.getClanInfo('vuejs', 'vue');
-    const angularClan = await ClanService.getClanInfo('angular', 'angular.js');
+    const allClansPromises = ClanConstants.allClans.map(clan => {
+      ClanService.getClanInfo(clan.owner, clan.repoName);
+    });
+    const allClans = await Promise.all(allClansPromises);
+    setClans(allClans);
 
-    setClans([reactClan, vueClan, angularClan]);
+    // const reactClan = await ClanService.getClanInfo('facebook', 'react');
+    // const vueClan = await ClanService.getClanInfo('vuejs', 'vue');
+    // const angularClan = await ClanService.getClanInfo('angular', 'angular.js');
+    //
+    // setClans([reactClan, vueClan, angularClan]);
   }
 
   const [Clans, setClans] = useState(undefined);
@@ -25,7 +32,7 @@ export function Home() {
   // componentDidMount
   useEffect( () => {
     getAllClans();
-  });
+  }, []);
 
   return (
     <div>
