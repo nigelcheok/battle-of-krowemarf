@@ -12,7 +12,7 @@ import ClanConstants from '../Constants/ClanConstants';
 
 import { TeamToggleButton } from "../Components/Button/TeamToggleButton/TeamToggleButton";
 
-export function Home() {
+export function ClansListPage() {
   const [currClan, setCurrClan] = useState(ClanConstants.allClans[0]);
   const [Clans, setClans] = useState([]);
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import { Home } from './Pages/Home';
+import { ClansListPage } from './Pages/ClansListPage';
+import { ClanDetailsPage } from './Pages/ClanDetailsPage';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
 function App() {
@@ -9,16 +10,16 @@ function App() {
       <div>
         {/*<Header />*/}
 
-        <Route exact path="/" component={Home} />
-        {/*<Route path="/about" component={About} />*/}
+        <Route exact path="/" component={ClansListPage} />
+        <Route exact path="/:id" component={ClanDetailsPage} />
         {/*<Route path="/topics" component={Topics} />*/}
       </div>
     </Router>
   );
 }
 
-// function Home() {
-//   return <h2>Home</h2>;
+// function ClansListPage() {
+//   return <h2>ClansListPage</h2>;
 // }
 
 // function About() {
@@ -57,7 +58,7 @@ function App() {
 //   return (
 //     <ul>
 //       <li>
-//         <Link to="/">Home</Link>
+//         <Link to="/">ClansListPage</Link>
 //       </li>
 //       <li>
 //         <Link to="/about">About</Link>
