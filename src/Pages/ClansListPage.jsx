@@ -47,7 +47,7 @@ export function ClansListPage(props) {
         }
       </div>
 
-      <div className="container">
+      <div className="container mt-4">
         <SectionSubheader text="Enemies"/>
       </div>
 

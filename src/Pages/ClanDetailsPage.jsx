@@ -2,12 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { SectionSubheader } from '../Components/Section/SectionSubheader/SectionSubheader';
 import { Card } from '../Components/Card/Card';
 import { Loader } from '../Components/Loader/Loader';
-import { Avatar } from "../Components/Avatar/Avatar";
+import { Avatar } from '../Components/Avatar/Avatar';
+import { InputField } from '../Components/Form/InputField/InputField';
 
 import { ClanService } from '../Services/ClanService';
 import ClanConstants from '../Constants/ClanConstants';
-import {UserFactory} from "../Factories/UserFactory";
-import parseLinkHeader from "parse-link-header";
+import { UserFactory } from '../Factories/UserFactory';
+import parseLinkHeader from 'parse-link-header';
 
 export function ClanDetailsPage(routeInfo) {
   const [isLoading, setLoader] = useState(true);
@@ -15,6 +16,7 @@ export function ClanDetailsPage(routeInfo) {
   const [ClanMembers, setClanMembers] = useState([]);
   const [ClanMembersNextPageUrl, setClanMembersNextPageUrl] = useState(undefined);
   const [isFetching, setFetcher] = useState(false);
+  const [queryString, setQueryString] = useState('');
 
   const clanRouteId = routeInfo.match.params.id;
   const clan = getClan(clanRouteId);
@@ -84,27 +86,50 @@ export function ClanDetailsPage(routeInfo) {
         }
       </div>
 
-      <div className="container">
-        <SectionSubheader text={`${ clan ? clan.clanName : ''} Clan Members`}/>
+      <div className="container mt-4">
+        <div className="d-sm-flex justify-content-between">
+          <SectionSubheader text={`${ clan ? clan.clanName : ''} Clan Members`}/>
+          <div style={{ marginTop: '2.25rem'}}>
+            <InputField queryString={queryString} onQueryStringChanged={(e) => setQueryString(e)}/>
+          </div>
+        </div>
       </div>
 
       <div className="container">
         { isLoading && <Loader/> }
 
-        <div className="d-flex justify-content-between flex-wrap">
-        {
-          ClanMembers.map(member => {
-            return (
-              <Avatar key={member.id} name={member.name} avatarUrl={member.avatarUrl} description={member.profileUrl}/>
-            )
-          })
-        }
-        </div>
+        { queryString === '' &&
+          <div>
+            <div className="d-flex justify-content-between flex-wrap">
+              {
+                ClanMembers.map(member => {
+                  return (
+                    <Avatar key={member.id} name={member.name} avatarUrl={member.avatarUrl}
+                            description={member.profileUrl}/>
+                  )
+                })
+              }
+            </div>
 
-        { isFetching &&
-        <div className="d-flex justify-content-center">
-          <Loader/>
-        </div>
+            {isFetching &&
+              <div className="d-flex justify-content-center">
+              <Loader/>
+              </div>
+            }
+          </div>
+        }
+
+        { queryString !== '' &&
+          <div className="d-flex justify-content-between flex-wrap">
+            {
+              ClanMembers.filter(member => member.name.toLowerCase().includes(queryString.toLowerCase())).map(member => {
+                return (
+                  <Avatar key={member.id} name={member.name} avatarUrl={member.avatarUrl}
+                          description={member.profileUrl}/>
+                )
+              })
+            }
+          </div>
         }
       </div>
 
