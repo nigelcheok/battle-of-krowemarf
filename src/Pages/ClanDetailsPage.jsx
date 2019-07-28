@@ -99,7 +99,7 @@ export function ClanDetailsPage(routeInfo) {
         { isLoading && <Loader/> }
 
         { queryString === '' &&
-          <div>
+          <div className="mr-n3">
             <div className="d-flex justify-content-between flex-wrap">
               {
                 ClanMembers.map(member => {

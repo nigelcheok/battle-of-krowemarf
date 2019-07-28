@@ -2,7 +2,7 @@ import React from 'react';
 
 export function Avatar(props) {
   return (
-    <div className="card border-square mt-3" style={AvatarStyle()}>
+    <div className="card border-square mt-3 flex-grow-1 mr-3" style={AvatarStyle()}>
       <div className="card-body">
         <img src={props.avatarUrl} style={AvatarImageStyle()} height="60" width="60" alt={props.name}/>
         <div className="mt-2" style={AvatarTitleStyle()}>
@@ -18,7 +18,7 @@ export function Avatar(props) {
 
 function AvatarStyle() {
   return {
-    minWidth: '360px',
+    minWidth: '350px',
     backgroundColor: 'rgba(37,39,41,.01)',
     textAlign: 'center',
   }
