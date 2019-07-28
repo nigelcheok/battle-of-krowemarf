@@ -1,14 +1,15 @@
 import React from 'react';
 import Logo from '../../Images/wework.png';
+import { Link } from 'react-router-dom';
 
 export function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-white" style={NavbarStyle()}>
       <div className="container d-flex align-items-center">
-        <a className="navbar-brand" href="/">
+        <Link className="navbar-brand" to="/">
           <img src={Logo} height="27" style={LogoStyle()} alt="logo"/>
-          <span style={BrandTextStyle()}>| Battle of Krowemarf</span>
-        </a>
+          <span style={BrandTextStyle()}>· Battle of Krowemarf</span>
+        </Link>
       </div>
     </nav>
   );
@@ -32,6 +33,8 @@ function BrandTextStyle() {
   return {
     display: 'inline-block',
     fontSize: '20px',
-    fontWeight: '600',
+    fontWeight: '700',
+    // textTransform: 'uppercase',
+    letterSpacing: '.5px',
   }
 }

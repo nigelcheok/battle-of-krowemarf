@@ -17,21 +17,38 @@ export function BaseLayout() {
   }
 
   return (
-    <div>
+    <Router>
       <Navbar/>
 
       <div className="container">
         <div className="mt-5"/>
-        <div className="d-flex justify-content-between">
+        <div className="d-sm-flex justify-content-between">
           <SectionHeader text={`${currClan.clanName} War Room`}/>
-          <TeamToggleButton teams={ClanConstants.allClans} currTeam={currClan} onClanChange={handleClanChange}/>
+          <div className="mt-3 mt-sm-0">
+            <div className="text-sm-right" style={SwitchTextStyle()}>
+               Switch Alliance
+            </div>
+            <TeamToggleButton teams={ClanConstants.allClans} currTeam={currClan} onClanChange={handleClanChange}/>
+          </div>
         </div>
       </div>
 
-      <Router>
-        <Route exact path="/" render={() => (<ClansListPage currClan={currClan}/>)}/>
-        <Route exact path="/:id" component={ClanDetailsPage} />
-      </Router>
-    </div>
-  )
+      <Route exact path="/" render={() => (<ClansListPage currClan={currClan}/>)}/>
+      <Route  path="/:id" component={ClanDetailsPage} />
+
+      <div className="mb-5"/>
+
+    </Router>
+  );
+
+  function SwitchTextStyle() {
+    return {
+      textTransform: 'uppercase',
+      fontSize: '.8rem',
+      fontWeight: '600',
+      letterSpacing: '.5px',
+      color: 'rgb(142, 142, 143)',
+      marginBottom: '3px',
+    }
+  }
 }

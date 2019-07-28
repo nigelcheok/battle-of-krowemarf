@@ -2,12 +2,14 @@ import React from 'react';
 
 export function GroupButton(props) {
   return (
-    <div className="btn-group" role="group" aria-label="" style={ GroupButtonStyle() }>
-      <button type="button" className="btn btn-outline-dark font-weight-bold" disabled>
-        <div className={`fa ${props.icon} fa-1x`} style={GroupButtonIconStyle()}/>
-        { props.label }
-      </button>
-      <button type="button" className="btn btn-outline-dark font-weight-bold" disabled>{ props.value }</button>
+     <div className="display-inline-block mt-2 mt-sm-0">
+      <div className="btn-group" role="group" aria-label="" style={ GroupButtonStyle() }>
+        <button type="button" className="btn btn-outline-dark font-weight-bold" disabled>
+          <div className={`fa ${props.icon} fa-1x`} style={GroupButtonIconStyle()}/>
+          { props.label }
+        </button>
+        <button type="button" className="btn btn-outline-dark font-weight-bold" disabled>{ props.value }</button>
+      </div>
     </div>
   );
 }

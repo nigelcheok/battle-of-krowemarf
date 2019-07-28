@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { SectionSubheader } from '../Components/Section/SectionSubheader/SectionSubheader';
 import { Card } from '../Components/Card/Card';
+import { Loader } from '../Components/Loader/Loader';
 
 import { ClanService } from '../Services/ClanService';
 import ClanConstants from '../Constants/ClanConstants';
 
 export function ClansListPage(props) {
+  const [isLoading, setLoader] = useState(true);
   const [Clans, setClans] = useState([]);
 
   async function getAllClans() {
@@ -16,6 +18,7 @@ export function ClansListPage(props) {
     const allClans = await Promise.all(allClansPromises);
     console.log(allClans);
     setClans(allClans);
+    setLoader(false);
   }
 
   useEffect( () => {
@@ -24,13 +27,15 @@ export function ClansListPage(props) {
 
   return (
     <div>
-      { Clans.filter(clan => clan.clan === props.currClan).length > 0 &&
-        <div className="container">
-          <SectionSubheader text="Allies"/>
-        </div>
-      }
+      <div className="container">
+        <SectionSubheader text="Allies"/>
+      </div>
 
       <div className="container">
+        { isLoading &&
+          <Loader/>
+        }
+
         { Clans.filter(clan => clan.clan === props.currClan).map(clan => {
             return (
               <Card
@@ -44,13 +49,15 @@ export function ClansListPage(props) {
         }
       </div>
 
-      { Clans.filter(clan => clan.clan !== props.currClan).length > 0 &&
       <div className="container">
         <SectionSubheader text="Enemies"/>
       </div>
-      }
 
       <div className="container">
+        { isLoading &&
+          <Loader/>
+        }
+
         { Clans.filter(clan => clan.clan !== props.currClan).map(clan => {
           return (
             <Card
@@ -63,6 +70,7 @@ export function ClansListPage(props) {
         })
         }
       </div>
+
 
     </div>
   );
