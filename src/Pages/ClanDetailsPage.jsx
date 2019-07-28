@@ -4,7 +4,7 @@ import { Navbar } from '../Components/Navbar/Navbar';
 export function ClanDetailsPage() {
   return (
     <div>
-      test
+test
     </div>
   );
 }

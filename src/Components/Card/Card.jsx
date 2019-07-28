@@ -1,10 +1,12 @@
 import React from 'react';
 import { CardFooter } from './CardFooter/CardFooter';
+import { Link } from 'react-router-dom';
 
 export function Card(props) {
   return (
-    <div className="card border-square mt-4">
-      {/*<img src="..." className="card-img-top" alt="...">*/}
+    <Link to={`/${props.clanDetails.clan.clanName.toLowerCase()}`} style={CardStyle()}>
+      <div className="card border-square mt-4">
+        {/*<img src="..." className="card-img-top" alt="...">*/}
         <div className="card-body d-flex" style={CardBodyStyle()}>
           <div className={`fab ${props.clanDetails.clan.clanIcon} fa-3x align-self-center mr-3`}/>
           <div>
@@ -13,9 +15,17 @@ export function Card(props) {
           </div>
           {/*<a href="#" className="btn btn-primary">Go somewhere</a>*/}
         </div>
-      <CardFooter clanDetails={props.clanDetails}/>
-    </div>
+        <CardFooter clanDetails={props.clanDetails}/>
+      </div>
+    </Link>
   );
+}
+
+function CardStyle() {
+  return {
+    textDecoration: 'none',
+    color: 'rgb(37,39,41)',
+  }
 }
 
 function CardBodyStyle() {

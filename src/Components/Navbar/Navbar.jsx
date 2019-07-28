@@ -1,8 +1,8 @@
 import React from 'react';
 import Logo from '../../Images/wework.png';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
-export function Navbar(match) {
+export function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-white" style={NavbarStyle()}>
       <div className="container d-flex align-items-center">
@@ -10,10 +10,10 @@ export function Navbar(match) {
         {/*<img src={Logo} height="27"/>*/}
       {/*</a>*/}
 
-      <Link className="navbar-brand" to={`${match.url}`}>
+      <a className="navbar-brand" href="/">
         <img src={Logo} height="27" style={LogoStyle()} alt="logo"/>
         <span style={BrandTextStyle()}>| Battle of Krowemarf</span>
-      </Link>
+      </a>
 
       {/*<button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">*/}
         {/*<span className="navbar-toggler-icon"></span>*/}
