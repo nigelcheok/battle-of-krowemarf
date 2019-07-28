@@ -31,3 +31,13 @@
 .vertical-flip {
     transform: scaleY(-1);
 }
+
+/*.btn.btn-outline-primary {*/
+    /*color: rgb(0, 0, 255);*/
+    /*border-color: rgb(0, 0, 255);*/
+/*}*/
+
+/*.btn.btn-outline-primary.active {*/
+    /*color: #fff;*/
+    /*background-color: rgb(0, 0, 255) !important;*/
+/*}*/

@@ -8,10 +8,17 @@ export function Card(props) {
       <div className="card border-square mt-4">
         {/*<img src="..." className="card-img-top" alt="...">*/}
         <div className="card-body d-flex" style={CardBodyStyle()}>
-          <div className={`fab ${props.clanDetails.clan.clanIcon} fa-3x align-self-center mr-3`}/>
+          <div className="align-self-center mr-3 bg-white d-flex justify-content-center position-relative" style={CardIconStyle()}>
+            <div className="vertical-align">
+              <div
+                className={`fab ${props.clanDetails.clan.clanIcon} fa-3x`}
+                style={{ color: props.clanDetails.clan.clanColor }}
+              />
+            </div>
+          </div>
           <div>
-            <h5 className="card-title" style={CardTitleStyle()}>{ props.title }</h5>
-            <p className="card-text" style={CardDescriptionStyle()}>{ props.description }</p>
+            <h5 className="card-title mt-1" style={CardTitleStyle()}>{ props.title }</h5>
+            <p className="card-text mt-1" style={CardDescriptionStyle()}>{ props.description }</p>
           </div>
           {/*<a href="#" className="btn btn-primary">Go somewhere</a>*/}
         </div>
@@ -31,6 +38,14 @@ function CardStyle() {
 function CardBodyStyle() {
   return {
     backgroundColor: 'rgba(37,39,41,.01)',
+  }
+}
+
+function CardIconStyle() {
+  return {
+    height: '60px',
+    width: '60px',
+    borderRadius: '30px',
   }
 }
 

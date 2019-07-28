@@ -67,6 +67,10 @@ export function ClanDetailsPage(routeInfo) {
       </div>
 
       <div className="container">
+        { isLoading &&
+        <Loader/>
+        }
+
         <div className="d-flex justify-content-between flex-wrap">
         { ClanMembers.map(member => {
           return (
