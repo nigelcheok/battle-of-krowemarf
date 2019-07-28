@@ -3,17 +3,17 @@ import { CardFooter } from './CardFooter/CardFooter';
 
 export function Card(props) {
   return (
-    <div className="card border-square">
+    <div className="card border-square mt-4">
       {/*<img src="..." className="card-img-top" alt="...">*/}
         <div className="card-body d-flex" style={CardBodyStyle()}>
-          <div className="fab fa-react fa-3x align-self-center mr-3"/>
+          <div className={`fab ${props.clanDetails.clan.clanIcon} fa-3x align-self-center mr-3`}/>
           <div>
             <h5 className="card-title" style={CardTitleStyle()}>{ props.title }</h5>
             <p className="card-text" style={CardDescriptionStyle()}>{ props.description }</p>
           </div>
           {/*<a href="#" className="btn btn-primary">Go somewhere</a>*/}
         </div>
-      <CardFooter/>
+      <CardFooter clanDetails={props.clanDetails}/>
     </div>
   );
 }

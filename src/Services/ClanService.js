@@ -19,37 +19,16 @@ export class ClanService {
     return axios.get(`${apiUrl}/repos/${owner}/${repoName}/pulls`);
   }
 
-  static async getClanInfo(owner, repoName) {
-    // this.getRepo(owner, repoName).then(repoResponse => {
-    //   // console.log(repoResponse);
-    //   this.getRepoPullRequests(owner, repoName).then(repoPullRequestsResponse => {
-    //     const linkHeaders = parseLinkHeader(repoPullRequestsResponse.headers.link);
-    //     const lastPage = linkHeaders.last.page;
-    //     axios.get(linkHeaders.last.url).then(repoPullRequestsLastPageResponse => {
-    //       const pullRequestsTotalCount = (lastPage-1) * 30 + repoPullRequestsLastPageResponse.data.length;
-    //       // console.log(pullRequestsTotalCount);
-    //       return new Clan(
-    //         repoResponse.data.id,
-    //         repoResponse.data.stargazers_count,
-    //         repoResponse.data.forks_count,
-    //         repoResponse.data.open_issues_count - pullRequestsTotalCount,
-    //         pullRequestsTotalCount
-    //       );
-    //     })
-    //   })
-    // });
-
-    const repoResponse = await this.getRepo(owner, repoName);
-    const repoPullRequestsResponse = await this.getRepoPullRequests(owner, repoName);
-
+  static async getClanDetails(clan) {
+    const repoResponse = await this.getRepo(clan.ownerName, clan.repoName);
+    const repoPullRequestsResponse = await this.getRepoPullRequests(clan.ownerName, clan.repoName);
     const linkHeaders = parseLinkHeader(repoPullRequestsResponse.headers.link);
     const lastPage = linkHeaders.last.page;
-
     const repoPullRequestsLastPageResponse = await axios.get(linkHeaders.last.url);
-
     const pullRequestsTotalCount = (lastPage-1) * 30 + repoPullRequestsLastPageResponse.data.length;
 
-    const clan = new Clan(
+    const clanDetails = new Clan(
+      clan,
       repoResponse.data.id,
       repoResponse.data.name,
       repoResponse.data.stargazers_count,
@@ -58,7 +37,7 @@ export class ClanService {
       pullRequestsTotalCount
     );
 
-    console.log(clan);
-    return clan;
+    console.log(clanDetails);
+    return clanDetails;
   }
 }
