@@ -6,7 +6,7 @@ export function InputField(props) {
       <input
         type="text"
         className="form-control border-square"
-        placeholder="Search for User"
+        placeholder="Search for user"
         value={props.queryString}
         onChange={(e) => props.onQueryStringChanged(e.target.value)}
       />
