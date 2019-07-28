@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SectionSubheader should render correctly with no props 1`] = `
+<div
+  style={
+    Object {
+      "color": "rgb(37, 39, 41)",
+      "fontSize": "1.5rem",
+      "fontWeight": "600",
+      "marginBottom": ".5rem",
+      "marginTop": "2.25rem",
+    }
+  }
+/>
+`;
+
+exports[`SectionSubheader should render correctly with props 1`] = `
+<div
+  style={
+    Object {
+      "color": "rgb(37, 39, 41)",
+      "fontSize": "1.5rem",
+      "fontWeight": "600",
+      "marginBottom": ".5rem",
+      "marginTop": "2.25rem",
+    }
+  }
+>
+  test
+</div>
+`;

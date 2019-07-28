@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navbar should render correctly with no props 1`] = `
+<nav
+  className="navbar navbar-expand-lg navbar-light bg-white"
+  style={
+    Object {
+      "borderBottom": "1px solid rgba(37, 39, 41, 0.1)",
+      "height": "80px",
+    }
+  }
+>
+  <div
+    className="container d-flex align-items-center"
+  >
+    <Link
+      className="navbar-brand"
+      to="/"
+    >
+      <img
+        alt="logo"
+        height="27"
+        src="wework.png"
+        style={
+          Object {
+            "display": "inline-block",
+            "transform": "translateY(-5px)",
+          }
+        }
+      />
+      <span
+        style={
+          Object {
+            "display": "inline-block",
+            "fontSize": "20px",
+            "fontWeight": "700",
+            "letterSpacing": ".5px",
+          }
+        }
+      >
+        · Battle of Krowemarf
+      </span>
+    </Link>
+  </div>
+</nav>
+`;
