@@ -14,9 +14,6 @@ export function Card(props) {
           {/*<a href="#" className="btn btn-primary">Go somewhere</a>*/}
         </div>
       <CardFooter/>
-      {/*<div className="card-footer" style={CardFooterStyle()}>*/}
-        {/*test*/}
-      {/*</div>*/}
     </div>
   );
 }

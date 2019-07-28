@@ -58,6 +58,7 @@ export class ClanService {
       pullRequestsTotalCount
     );
 
+    console.log(clan);
     return clan;
   }
 }
