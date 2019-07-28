@@ -7,7 +7,7 @@ export function Card(props) {
     <div>
       { props.clanDetails &&
         <Link to={`/${props.clanDetails.clan.clanName.toLowerCase()}`} style={CardStyle()}>
-          <div className="card border-square mt-4">
+          <div className="card border-square mt-4" style={props.disabled ? {cursor: 'default'} : {}}>
             <div className="card-body d-flex" style={CardBodyStyle()}>
               <div className="align-self-center mr-3 bg-white d-flex justify-content-center position-relative"
                    style={CardIconStyle()}>

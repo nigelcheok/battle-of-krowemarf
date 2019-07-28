@@ -82,6 +82,7 @@ export function ClanDetailsPage(routeInfo) {
             title={ClanDetails.clan.clanName}
             description={`By ${ClanDetails.clan.ownerName}`}
             clanDetails={ClanDetails}
+            disabled
           />
         }
       </div>
