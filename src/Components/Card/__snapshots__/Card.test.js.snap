@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card should render correctly with no props 1`] = `<div />`;
+
+exports[`Card should render correctly with props 1`] = `
+<div>
+  <Link
+    style={
+      Object {
+        "color": "rgb(37,39,41)",
+        "textDecoration": "none",
+      }
+    }
+    to="/react"
+  >
+    <div
+      className="card border-square mt-4"
+    >
+      <div
+        className="card-body d-flex"
+        style={
+          Object {
+            "backgroundColor": "rgba(37,39,41,.01)",
+          }
+        }
+      >
+        <div
+          className="align-self-center mr-3 bg-white d-flex justify-content-center position-relative"
+          style={
+            Object {
+              "borderRadius": "30px",
+              "height": "60px",
+              "width": "60px",
+            }
+          }
+        >
+          <div
+            className="vertical-align"
+          >
+            <div
+              className="fab fa-react fa-3x"
+              style={
+                Object {
+                  "color": "#00d8ff",
+                }
+              }
+            />
+          </div>
+        </div>
+        <div>
+          <h5
+            className="card-title mt-1"
+            style={
+              Object {
+                "fontSize": "1.25rem",
+                "marginBottom": "0",
+              }
+            }
+          >
+            test
+          </h5>
+          <p
+            className="card-text mt-1"
+            style={
+              Object {
+                "color": "rgb(142, 142, 143)",
+                "fontSize": ".9rem",
+              }
+            }
+          >
+            test description
+          </p>
+        </div>
+      </div>
+      <CardFooter
+        clanDetails={
+          Object {
+            "clan": Object {
+              "clanColor": "#00d8ff",
+              "clanIcon": "fa-react",
+              "clanName": "React",
+              "ownerName": "facebook",
+              "repoName": "react",
+            },
+            "forksCount": 2,
+            "id": undefined,
+            "issuesCount": 3,
+            "name": "react",
+            "pullRequestsCount": 4,
+            "starsCount": 1,
+          }
+        }
+      />
+    </div>
+  </Link>
+</div>
+`;

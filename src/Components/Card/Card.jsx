@@ -4,27 +4,30 @@ import { Link } from 'react-router-dom';
 
 export function Card(props) {
   return (
-    <Link to={`/${props.clanDetails.clan.clanName.toLowerCase()}`} style={CardStyle()}>
-      <div className="card border-square mt-4">
-        {/*<img src="..." className="card-img-top" alt="...">*/}
-        <div className="card-body d-flex" style={CardBodyStyle()}>
-          <div className="align-self-center mr-3 bg-white d-flex justify-content-center position-relative" style={CardIconStyle()}>
-            <div className="vertical-align">
-              <div
-                className={`fab ${props.clanDetails.clan.clanIcon} fa-3x`}
-                style={{ color: props.clanDetails.clan.clanColor }}
-              />
+    <div>
+      { props.clanDetails &&
+        <Link to={`/${props.clanDetails.clan.clanName.toLowerCase()}`} style={CardStyle()}>
+          <div className="card border-square mt-4">
+            <div className="card-body d-flex" style={CardBodyStyle()}>
+              <div className="align-self-center mr-3 bg-white d-flex justify-content-center position-relative"
+                   style={CardIconStyle()}>
+                <div className="vertical-align">
+                  <div
+                    className={`fab ${props.clanDetails.clan.clanIcon} fa-3x`}
+                    style={{color: props.clanDetails.clan.clanColor}}
+                  />
+                </div>
+              </div>
+              <div>
+                <h5 className="card-title mt-1" style={CardTitleStyle()}>{props.title}</h5>
+                <p className="card-text mt-1" style={CardDescriptionStyle()}>{props.description}</p>
+              </div>
             </div>
+            <CardFooter clanDetails={props.clanDetails}/>
           </div>
-          <div>
-            <h5 className="card-title mt-1" style={CardTitleStyle()}>{ props.title }</h5>
-            <p className="card-text mt-1" style={CardDescriptionStyle()}>{ props.description }</p>
-          </div>
-          {/*<a href="#" className="btn btn-primary">Go somewhere</a>*/}
-        </div>
-        <CardFooter clanDetails={props.clanDetails}/>
-      </div>
-    </Link>
+        </Link>
+      }
+    </div>
   );
 }
 

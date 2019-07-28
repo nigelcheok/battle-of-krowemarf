@@ -1,5 +1,4 @@
 import React from 'react';
-import ClanConstants from '../../../Constants/ClanConstants';
 
 export function TeamToggleButton(props) {
   return (
