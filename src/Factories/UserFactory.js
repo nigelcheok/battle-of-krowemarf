@@ -8,6 +8,15 @@ export class UserFactory {
       json.id,
       json.login,
       json.avatar_url,
+      json.html_url,
     );
+  }
+
+  static createFromJsonArray(jsonArray) {
+    if (jsonArray === undefined || jsonArray === null) return undefined;
+
+    return jsonArray.map(json => {
+      return this.createFromJson(json);
+    });
   }
 }

@@ -37,7 +37,14 @@ export class ClanService {
       pullRequestsTotalCount
     );
 
-    // console.log(clanDetails);
     return clanDetails;
   }
+
+  static getRepoStarredUsers(owner, repoName) {
+    return axios.get(`${apiUrl}/repos/${owner}/${repoName}/stargazers`);
+  }
+
+  // static async getClanMembers() {
+  //
+  // }
 }
