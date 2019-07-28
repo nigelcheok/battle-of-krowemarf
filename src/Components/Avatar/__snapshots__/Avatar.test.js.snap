@@ -1,0 +1,137 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Avatar should render correctly 1`] = `
+<div
+  className="card border-square mt-3 flex-grow-1 mr-3"
+  style={
+    Object {
+      "backgroundColor": "rgba(37,39,41,.01)",
+      "minWidth": "350px",
+      "textAlign": "center",
+    }
+  }
+>
+  <div
+    className="card-body"
+  >
+    <img
+      alt="test"
+      height="60"
+      style={
+        Object {
+          "borderRadius": "40px",
+        }
+      }
+      width="60"
+    />
+    <div
+      className="mt-2"
+      style={
+        Object {
+          "fontWeight": "600",
+        }
+      }
+    >
+      test
+    </div>
+    <div
+      style={
+        Object {
+          "fontSize": ".8rem",
+        }
+      }
+    >
+      test description
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Avatar should render correctly with name and description 1`] = `
+<div
+  className="card border-square mt-3 flex-grow-1 mr-3"
+  style={
+    Object {
+      "backgroundColor": "rgba(37,39,41,.01)",
+      "minWidth": "350px",
+      "textAlign": "center",
+    }
+  }
+>
+  <div
+    className="card-body"
+  >
+    <img
+      alt="test"
+      height="60"
+      style={
+        Object {
+          "borderRadius": "40px",
+        }
+      }
+      width="60"
+    />
+    <div
+      className="mt-2"
+      style={
+        Object {
+          "fontWeight": "600",
+        }
+      }
+    >
+      test
+    </div>
+    <div
+      style={
+        Object {
+          "fontSize": ".8rem",
+        }
+      }
+    >
+      test description
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Avatar should render correctly with no props 1`] = `
+<div
+  className="card border-square mt-3 flex-grow-1 mr-3"
+  style={
+    Object {
+      "backgroundColor": "rgba(37,39,41,.01)",
+      "minWidth": "350px",
+      "textAlign": "center",
+    }
+  }
+>
+  <div
+    className="card-body"
+  >
+    <img
+      height="60"
+      style={
+        Object {
+          "borderRadius": "40px",
+        }
+      }
+      width="60"
+    />
+    <div
+      className="mt-2"
+      style={
+        Object {
+          "fontWeight": "600",
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "fontSize": ".8rem",
+        }
+      }
+    />
+  </div>
+</div>
+`;

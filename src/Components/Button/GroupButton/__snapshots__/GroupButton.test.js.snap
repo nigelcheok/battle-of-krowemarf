@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GroupButton should render correctly with label and value 1`] = `
+<div
+  className="display-inline-block mt-2 mt-lg-0"
+>
+  <div
+    aria-label=""
+    className="btn-group"
+    role="group"
+    style={
+      Object {
+        "marginRight": "12px",
+      }
+    }
+  >
+    <button
+      className="btn btn-outline-dark font-weight-bold"
+      disabled={true}
+      type="button"
+    >
+      <div
+        className="fa undefined fa-1x"
+        style={
+          Object {
+            "display": "inline-block",
+            "marginRight": "6px",
+          }
+        }
+      />
+      test
+    </button>
+    <button
+      className="btn btn-outline-dark font-weight-bold"
+      disabled={true}
+      type="button"
+    >
+      value description
+    </button>
+  </div>
+</div>
+`;
+
+exports[`GroupButton should render correctly with no props 1`] = `
+<div
+  className="display-inline-block mt-2 mt-lg-0"
+>
+  <div
+    aria-label=""
+    className="btn-group"
+    role="group"
+    style={
+      Object {
+        "marginRight": "12px",
+      }
+    }
+  >
+    <button
+      className="btn btn-outline-dark font-weight-bold"
+      disabled={true}
+      type="button"
+    >
+      <div
+        className="fa undefined fa-1x"
+        style={
+          Object {
+            "display": "inline-block",
+            "marginRight": "6px",
+          }
+        }
+      />
+    </button>
+    <button
+      className="btn btn-outline-dark font-weight-bold"
+      disabled={true}
+      type="button"
+    />
+  </div>
+</div>
+`;

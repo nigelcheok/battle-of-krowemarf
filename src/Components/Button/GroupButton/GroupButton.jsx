@@ -8,7 +8,9 @@ export function GroupButton(props) {
           <div className={`fa ${props.icon} fa-1x`} style={GroupButtonIconStyle()}/>
           { props.label }
         </button>
-        <button type="button" className="btn btn-outline-dark font-weight-bold" disabled>{ props.value }</button>
+        <button type="button" className="btn btn-outline-dark font-weight-bold" disabled>
+          { props.value }
+          </button>
       </div>
     </div>
   );

@@ -1,0 +1,84 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TeamToggleButton should render correctly with no props 1`] = `
+<div
+  aria-label=""
+  className="btn-group"
+  role="group"
+/>
+`;
+
+exports[`TeamToggleButton should render correctly with teams and currteam 1`] = `
+<div
+  aria-label=""
+  className="btn-group"
+  role="group"
+>
+  <button
+    className="btn btn-outline-primary font-weight-bold "
+    id="team-React"
+    key="0"
+    onClick={[Function]}
+    type="button"
+  >
+    <div
+      className="fab fa-react fa-1x"
+      style={
+        Object {
+          "display": "inline-block",
+          "marginRight": "6px",
+        }
+      }
+    />
+    <div
+      className="font-size-smaller display-inline-block"
+    >
+      React
+    </div>
+  </button>
+  <button
+    className="btn btn-outline-primary font-weight-bold active"
+    id="team-Vue"
+    key="1"
+    onClick={[Function]}
+    type="button"
+  >
+    <div
+      className="fab fa-vuejs fa-1x"
+      style={
+        Object {
+          "display": "inline-block",
+          "marginRight": "6px",
+        }
+      }
+    />
+    <div
+      className="font-size-smaller display-inline-block"
+    >
+      Vue
+    </div>
+  </button>
+  <button
+    className="btn btn-outline-primary font-weight-bold "
+    id="team-Angular"
+    key="2"
+    onClick={[Function]}
+    type="button"
+  >
+    <div
+      className="fab fa-angular fa-1x"
+      style={
+        Object {
+          "display": "inline-block",
+          "marginRight": "6px",
+        }
+      }
+    />
+    <div
+      className="font-size-smaller display-inline-block"
+    >
+      Angular
+    </div>
+  </button>
+</div>
+`;
