@@ -37,9 +37,3 @@ function CardDescriptionStyle() {
     color: 'rgb(142, 142, 143)',
   }
 }
-//
-// function CardFooterStyle() {
-//   return {
-//     borderTop: '0',
-//   }
-// }

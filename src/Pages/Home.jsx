@@ -13,7 +13,6 @@ import ClanConstants from '../Constants/ClanConstants';
 import { TeamToggleButton } from "../Components/Button/TeamToggleButton/TeamToggleButton";
 
 export function Home() {
-
   const [currClan, setCurrClan] = useState(ClanConstants.allClans[0]);
   const [Clans, setClans] = useState([]);
 
@@ -26,19 +25,12 @@ export function Home() {
     const allClans = await Promise.all(allClansPromises);
     console.log(allClans);
     setClans(allClans);
-
-    // const reactClan = await ClanService.getClanInfo('facebook', 'react');
-    // const vueClan = await ClanService.getClanInfo('vuejs', 'vue');
-    // const angularClan = await ClanService.getClanInfo('angular', 'angular.js');
-    //
-    // setClans([reactClan, vueClan, angularClan]);
   }
 
   function handleClanChange(newClan) {
     setCurrClan(newClan);
   }
 
-  // componentDidMount
   useEffect( () => {
     getAllClans();
   }, []);
@@ -55,9 +47,11 @@ export function Home() {
           </div>
       </div>
 
-      <div className="container">
-        <SectionSubheader text="Allies"/>
-      </div>
+      { Clans.filter(clan => clan.clan === currClan).length &&
+        <div className="container">
+          <SectionSubheader text="Allies"/>
+        </div>
+      }
 
       <div className="container">
         { Clans.filter(clan => clan.clan === currClan).map(clan => {
@@ -73,9 +67,11 @@ export function Home() {
         }
       </div>
 
+      { Clans.filter(clan => clan.clan !== currClan).length &&
       <div className="container">
         <SectionSubheader text="Enemies"/>
       </div>
+      }
 
       <div className="container">
         { Clans.filter(clan => clan.clan !== currClan).map(clan => {
