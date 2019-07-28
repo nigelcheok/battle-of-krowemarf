@@ -4,7 +4,7 @@ export function Avatar(props) {
   return (
     <div className="card border-square mt-3" style={AvatarStyle()}>
       <div className="card-body">
-        <img src={props.avatarUrl} style={AvatarImageStyle()} height="60" width="60"/>
+        <img src={props.avatarUrl} style={AvatarImageStyle()} height="60" width="60" alt={props.name}/>
         <div className="mt-2" style={AvatarTitleStyle()}>
           { props.name }
         </div>

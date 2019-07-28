@@ -32,9 +32,7 @@ export function ClansListPage(props) {
       </div>
 
       <div className="container">
-        { isLoading &&
-          <Loader/>
-        }
+        { isLoading && <Loader/> }
 
         { Clans.filter(clan => clan.clan === props.currClan).map(clan => {
             return (
@@ -54,20 +52,19 @@ export function ClansListPage(props) {
       </div>
 
       <div className="container">
-        { isLoading &&
-          <Loader/>
-        }
+        { isLoading && <Loader/> }
 
-        { Clans.filter(clan => clan.clan !== props.currClan).map(clan => {
-          return (
-            <Card
-              key={clan.id}
-              title={clan.clan.clanName}
-              description={`By ${clan.clan.ownerName}`}
-              clanDetails={clan}
-            />
-          )
-        })
+        {
+          Clans.filter(clan => clan.clan !== props.currClan).map(clan => {
+            return (
+              <Card
+                key={clan.id}
+                title={clan.clan.clanName}
+                description={`By ${clan.clan.ownerName}`}
+                clanDetails={clan}
+              />
+            )
+          })
         }
       </div>
 

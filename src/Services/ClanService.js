@@ -44,6 +44,10 @@ export class ClanService {
     return axios.get(`${apiUrl}/repos/${owner}/${repoName}/stargazers`);
   }
 
+  static getDataFromUrl(url) {
+    return axios.get(url);
+  }
+
   // static async getClanMembers() {
   //
   // }
