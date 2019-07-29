@@ -17,6 +17,11 @@ exports[`GroupButton should render correctly with label and value 1`] = `
     <button
       className="btn btn-outline-dark font-weight-bold"
       disabled={true}
+      style={
+        Object {
+          "pointerEvents": "none",
+        }
+      }
       type="button"
     >
       <div
@@ -33,6 +38,11 @@ exports[`GroupButton should render correctly with label and value 1`] = `
     <button
       className="btn btn-outline-dark font-weight-bold"
       disabled={true}
+      style={
+        Object {
+          "pointerEvents": "none",
+        }
+      }
       type="button"
     >
       value description
@@ -58,6 +68,11 @@ exports[`GroupButton should render correctly with no props 1`] = `
     <button
       className="btn btn-outline-dark font-weight-bold"
       disabled={true}
+      style={
+        Object {
+          "pointerEvents": "none",
+        }
+      }
       type="button"
     >
       <div
@@ -73,6 +88,11 @@ exports[`GroupButton should render correctly with no props 1`] = `
     <button
       className="btn btn-outline-dark font-weight-bold"
       disabled={true}
+      style={
+        Object {
+          "pointerEvents": "none",
+        }
+      }
       type="button"
     />
   </div>

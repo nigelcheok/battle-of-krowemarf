@@ -14,7 +14,8 @@ exports[`Card should render correctly with props 1`] = `
     to="/react"
   >
     <div
-      className="card border-square mt-4"
+      className="card border-square mt-3 shadow-on-hover"
+      style={Object {}}
     >
       <div
         className="card-body d-flex"

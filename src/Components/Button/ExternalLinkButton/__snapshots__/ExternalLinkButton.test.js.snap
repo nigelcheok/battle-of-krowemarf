@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ExternalLinkButton should render correctly with name and description 1`] = `
+<a
+  href="http://google.com"
+  target="_blank"
+>
+  <button
+    className="btn btn-outline-dark font-weight-bold"
+    type="button"
+  >
+    <div
+      className="fab test mr-2"
+    />
+    test
+  </button>
+</a>
+`;
+
+exports[`ExternalLinkButton should render correctly with no props 1`] = `
+<a
+  target="_blank"
+>
+  <button
+    className="btn btn-outline-dark font-weight-bold"
+    type="button"
+  >
+    <div
+      className="fab undefined mr-2"
+    />
+  </button>
+</a>
+`;
