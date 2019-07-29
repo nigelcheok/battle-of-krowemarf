@@ -54,13 +54,15 @@ export function ClanDetailsPage(routeInfo) {
 
   useEffect(() => {
     async function getMoreClanMembers() {
-      const response = await ClanService.getDataFromUrl(ClanMembersNextPageUrl);
-      const linkHeaders = parseLinkHeader(response.headers.link);
-      setClanMembersNextPageUrl(linkHeaders.next.url);
+        if (ClanMembersNextPageUrl) {
+        const response = await ClanService.getDataFromUrl(ClanMembersNextPageUrl);
+        const linkHeaders = parseLinkHeader(response.headers.link);
+        setClanMembersNextPageUrl(linkHeaders.next.url);
 
-      const additionalClanMembers = UserFactory.createFromJsonArray(response.data);
-      setClanMembers([...ClanMembers, ...additionalClanMembers]);
-      setFetcher(false);
+        const additionalClanMembers = UserFactory.createFromJsonArray(response.data);
+        setClanMembers([...ClanMembers, ...additionalClanMembers]);
+        setFetcher(false);
+      }
     }
 
     if (isFetching) {
@@ -105,8 +107,12 @@ export function ClanDetailsPage(routeInfo) {
               {
                 ClanMembers.map(member => {
                   return (
-                    <Avatar key={member.id} name={member.name} avatarUrl={member.avatarUrl}
-                            description={member.profileUrl}/>
+                    <Avatar
+                      key={member.id}
+                      name={member.name}
+                      avatarUrl={member.avatarUrl}
+                      description={member.profileUrl}
+                    />
                   )
                 })
               }
@@ -125,8 +131,12 @@ export function ClanDetailsPage(routeInfo) {
             {
               ClanMembers.filter(member => member.name.toLowerCase().includes(queryString.toLowerCase())).map(member => {
                 return (
-                  <Avatar key={member.id} name={member.name} avatarUrl={member.avatarUrl}
-                          description={member.profileUrl}/>
+                  <Avatar
+                    key={member.id}
+                    name={member.name}
+                    avatarUrl={member.avatarUrl}
+                    description={member.profileUrl}
+                  />
                 )
               })
             }
