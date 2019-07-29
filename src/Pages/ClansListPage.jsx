@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { SectionSubheader } from '../Components/Section/SectionSubheader/SectionSubheader';
 import { Card } from '../Components/Card/Card';
-import { Loader } from '../Components/Loader/Loader';
+import { CardLoader } from '../Components/Loader/CardLoader/CardLoader';
 
 import { ClanService } from '../Services/ClanService';
 import ClanConstants from '../Constants/ClanConstants';
@@ -32,7 +32,7 @@ export function ClansListPage(props) {
       </div>
 
       <div className="container">
-        { isLoading && <Loader/> }
+        { isLoading && <CardLoader/> }
 
         { Clans.filter(clan => clan.clan === props.currClan).map(clan => {
             return (
@@ -52,7 +52,7 @@ export function ClansListPage(props) {
       </div>
 
       <div className="container">
-        { isLoading && <Loader/> }
+        { isLoading && <CardLoader/> }
 
         {
           Clans.filter(clan => clan.clan !== props.currClan).map(clan => {
@@ -67,7 +67,6 @@ export function ClansListPage(props) {
           })
         }
       </div>
-
 
     </div>
   );

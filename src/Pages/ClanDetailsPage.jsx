@@ -5,6 +5,7 @@ import { Loader } from '../Components/Loader/Loader';
 import { Avatar } from '../Components/Avatar/Avatar';
 import { InputField } from '../Components/Form/InputField/InputField';
 import { ExternalLinkButton } from '../Components/Button/ExternalLinkButton/ExternalLinkButton';
+import { CardLoader } from '../Components/Loader/CardLoader/CardLoader';
 
 import { ClanService } from '../Services/ClanService';
 import ClanConstants from '../Constants/ClanConstants';
@@ -87,7 +88,7 @@ export function ClanDetailsPage(routeInfo) {
       </div>
 
       <div className="container">
-        { isLoading && <Loader/> }
+        { isLoading && <CardLoader/> }
 
         { ClanDetails &&
           <Card
@@ -109,7 +110,7 @@ export function ClanDetailsPage(routeInfo) {
       </div>
 
       <div className="container">
-        { isLoading && <Loader/> }
+        { isLoading && <CardLoader/> }
 
         { queryString === '' &&
           <div className="mr-n3">
