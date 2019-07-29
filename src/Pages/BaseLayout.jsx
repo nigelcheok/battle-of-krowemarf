@@ -22,7 +22,7 @@ export function BaseLayout() {
 
       <div className="container">
         <div className="mt-5"/>
-        <div className="d-sm-flex justify-content-between">
+        <div className="d-sm-flex justify-content-between align-items-end">
           <SectionHeader text={`${currClan.clanName} War Room`}/>
           <div className="mt-3 mt-sm-0">
             <div className="text-sm-right" style={SwitchTextStyle()}>

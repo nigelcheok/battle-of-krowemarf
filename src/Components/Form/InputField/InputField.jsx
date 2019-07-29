@@ -2,7 +2,6 @@ import React from 'react';
 
 export function InputField(props) {
   return (
-    <div className="form-group">
       <input
         type="text"
         className="form-control border-square"
@@ -10,6 +9,5 @@ export function InputField(props) {
         value={props.queryString}
         onChange={(e) => props.onQueryStringChanged(e.target.value)}
       />
-    </div>
   );
 }

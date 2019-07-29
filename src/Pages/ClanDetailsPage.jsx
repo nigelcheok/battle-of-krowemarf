@@ -4,6 +4,7 @@ import { Card } from '../Components/Card/Card';
 import { Loader } from '../Components/Loader/Loader';
 import { Avatar } from '../Components/Avatar/Avatar';
 import { InputField } from '../Components/Form/InputField/InputField';
+import { ExternalLinkButton } from '../Components/Button/ExternalLinkButton/ExternalLinkButton';
 
 import { ClanService } from '../Services/ClanService';
 import ClanConstants from '../Constants/ClanConstants';
@@ -73,7 +74,16 @@ export function ClanDetailsPage(routeInfo) {
   return (
     <div>
       <div className="container">
-        <SectionSubheader text={`${ clan ? clan.clanName : ''} Clan Details`}/>
+        <div className="d-sm-flex justify-content-between align-items-end">
+          <SectionSubheader text={`${ clan ? clan.clanName : ''} Clan Details`}/>
+          { clan &&
+            <ExternalLinkButton
+              icon="fa-github"
+              text={`${clan.ownerName}/${clan.repoName}`}
+              link={`https://github.com/${clan.ownerName}/${clan.repoName}`}
+            />
+          }
+        </div>
       </div>
 
       <div className="container">
@@ -90,9 +100,9 @@ export function ClanDetailsPage(routeInfo) {
       </div>
 
       <div className="container mt-4">
-        <div className="d-sm-flex justify-content-between">
+        <div className="d-sm-flex justify-content-between align-items-end">
           <SectionSubheader text={`${ clan ? clan.clanName : ''} Clan Members`}/>
-          <div style={{ marginTop: '2.25rem'}}>
+          <div>
             <InputField queryString={queryString} onQueryStringChanged={(e) => setQueryString(e)}/>
           </div>
         </div>
@@ -112,6 +122,7 @@ export function ClanDetailsPage(routeInfo) {
                       name={member.name}
                       avatarUrl={member.avatarUrl}
                       description={member.profileUrl}
+                      link={member.profileUrl}
                     />
                   )
                 })
@@ -136,6 +147,7 @@ export function ClanDetailsPage(routeInfo) {
                     name={member.name}
                     avatarUrl={member.avatarUrl}
                     description={member.profileUrl}
+                    link={member.profileUrl}
                   />
                 )
               })
