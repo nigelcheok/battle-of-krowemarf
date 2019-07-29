@@ -130,7 +130,7 @@ export function ClanDetailsPage(routeInfo) {
               }
             </div>
 
-            {isFetching &&
+            { isFetching &&
               <div className="d-flex justify-content-center">
               <Loader/>
               </div>
