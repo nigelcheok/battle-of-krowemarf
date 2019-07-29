@@ -14,6 +14,6 @@ function SectionSubheaderStyle() {
     // marginBottom: '.5rem',
     fontSize: '1.5rem',
     color: 'rgb(37, 39, 41)',
-    fontWeight: '600',
+    // fontWeight: '600',
   }
 }
