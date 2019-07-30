@@ -10,36 +10,38 @@ it('renders without crashing', () => {
   ReactDOM.unmountComponentAtNode(div);
 });
 
-describe('main page', async () => {
-  let browser = await puppeteer.launch({
-    headless: false
-  });
-  let page = await browser.newPage();
-
-  page.emulate({
-    viewport: {
-      width: 800,
-      height: 2400
-    },
-    userAgent: ''
-  });
-
-  await page.goto('http://localhost:3000/');
-
+describe('on normal device', async () => {
   test('page can load', async () => {
+    let browser = await puppeteer.launch({
+      headless: false,
+      slowMo: 40,
+    });
+    let page = await browser.newPage();
+
+    page.emulate({
+      viewport: {
+        width: 800,
+        height: 600,
+      },
+      userAgent: ''
+    });
+
+    await page.goto('http://localhost:3000');
+
     await page.waitForSelector('#clan-header');
 
-    const html = await page.$eval('#clan-header', e => e.innerHTML);
-    expect(html).toBe('React War Room');
-  }, 16000);
+    let html;
 
-  test('can toggle team', async () => {
+    html = await page.$eval('#clan-header', e => e.innerHTML);
+    expect(html).toBe('React War Room');
+
+    await page.waitForSelector('#clan-header');
+
     page.click('#team-Vue');
     await page.waitFor(1000);
 
-    const element = await page.$eval('#team-Vue');
-    expect(element).toBe('<button type="button" class="btn btn-outline-primary font-weight-bold active" id="team-Vue"><div class="fab fa-vuejs fa-1x" style="display: inline-block; margin-right: 6px;"></div><div class="font-size-smaller display-inline-block">Vue</div></button>')
+    html = await page.$eval('#clan-header', e => e.innerHTML);
+    expect(html).toBe('Vue War Room');
 
-    // browser.close();
   }, 16000);
 });

@@ -7,16 +7,16 @@ import { InputField } from '../Components/Form/InputField/InputField';
 import { ExternalLinkButton } from '../Components/Button/ExternalLinkButton/ExternalLinkButton';
 import { CardLoader } from '../Components/Loader/CardLoader/CardLoader';
 
-import { ClanService } from '../Services/ClanService';
 import ClanConstants from '../Constants/ClanConstants';
+import { ClanService } from '../Services/ClanService';
 import { UserFactory } from '../Factories/UserFactory';
 import parseLinkHeader from 'parse-link-header';
 
 export function ClanDetailsPage(routeInfo) {
   const [isLoading, setLoader] = useState(true);
-  const [ClanDetails, setClanDetails] = useState(undefined);
-  const [ClanMembers, setClanMembers] = useState([]);
-  const [ClanMembersNextPageUrl, setClanMembersNextPageUrl] = useState(undefined);
+  const [clanDetails, setClanDetails] = useState(undefined);
+  const [clanMembers, setClanMembers] = useState([]);
+  const [clanMembersNextPageUrl, setClanMembersNextPageUrl] = useState(undefined);
   const [isFetching, setFetcher] = useState(false);
   const [queryString, setQueryString] = useState('');
 
@@ -27,6 +27,13 @@ export function ClanDetailsPage(routeInfo) {
     const clanInfo = ClanConstants.allClans.filter(clan => clan.clanName.toLowerCase() === clanRouteId);
     if (clanInfo.length) return clanInfo[0];
     return undefined;
+  }
+
+  function updateClanMembers(response) {
+    const clanMembersToBeIncluded = UserFactory.createFromJsonArray(response.data);
+    setClanMembers([...clanMembers, ...clanMembersToBeIncluded]);
+    const linkHeaders = parseLinkHeader(response.headers.link);
+    setClanMembersNextPageUrl(linkHeaders.next.url);
   }
 
   function handleScroll() {
@@ -44,11 +51,7 @@ export function ClanDetailsPage(routeInfo) {
       setClanDetails(clanDetails);
 
       const response = await ClanService.getRepoStarredUsers(clan.ownerName, clan.repoName);
-      const linkHeaders = parseLinkHeader(response.headers.link);
-      setClanMembersNextPageUrl(linkHeaders.next.url);
-
-      const clanMembers = UserFactory.createFromJsonArray(response.data);
-      setClanMembers(clanMembers);
+      updateClanMembers(response);
       setLoader(false);
     }
 
@@ -63,20 +66,14 @@ export function ClanDetailsPage(routeInfo) {
   }, [clan]);
 
   useEffect(() => {
-    async function getMoreClanMembers() {
-        if (ClanMembersNextPageUrl) {
-        const response = await ClanService.getDataFromUrl(ClanMembersNextPageUrl);
-        const linkHeaders = parseLinkHeader(response.headers.link);
-        setClanMembersNextPageUrl(linkHeaders.next.url);
-
-        const additionalClanMembers = UserFactory.createFromJsonArray(response.data);
-        setClanMembers([...ClanMembers, ...additionalClanMembers]);
-        setFetcher(false);
-      }
+    async function getMoreClanMembers(nextPageUrl) {
+      const response = await ClanService.getDataFromUrl(nextPageUrl);
+      updateClanMembers(response);
+      setFetcher(false);
     }
 
-    if (isFetching) {
-      getMoreClanMembers();
+    if (isFetching && clanMembersNextPageUrl) {
+      getMoreClanMembers(clanMembersNextPageUrl);
     }
   }, [isFetching]);
 
@@ -98,11 +95,11 @@ export function ClanDetailsPage(routeInfo) {
       <div className="container">
         { isLoading && <CardLoader/> }
 
-        { ClanDetails &&
+        { clanDetails &&
           <Card
-            title={ClanDetails.clan.clanName}
-            description={`By ${ClanDetails.clan.ownerName}`}
-            clanDetails={ClanDetails}
+            title={clanDetails.clan.clanName}
+            description={`By ${clanDetails.clan.ownerName}`}
+            clanDetails={clanDetails}
             disabled
           />
         }
@@ -124,7 +121,7 @@ export function ClanDetailsPage(routeInfo) {
           <div className="mr-n3">
             <div className="d-flex justify-content-between flex-wrap">
               {
-                ClanMembers.map(member => {
+                clanMembers.map(member => {
                   return (
                     <Avatar
                       key={member.id}
@@ -151,7 +148,7 @@ export function ClanDetailsPage(routeInfo) {
         { queryString !== '' &&
           <div className="d-flex justify-content-between flex-wrap">
             {
-              ClanMembers.filter(member => member.name.toLowerCase().includes(queryString.toLowerCase())).map(member => {
+              clanMembers.filter(member => member.name.toLowerCase().includes(queryString.toLowerCase())).map(member => {
                 return (
                   <Avatar
                     key={member.id}

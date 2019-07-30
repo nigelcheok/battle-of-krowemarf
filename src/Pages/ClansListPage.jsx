@@ -8,7 +8,7 @@ import ClanConstants from '../Constants/ClanConstants';
 
 export function ClansListPage(props) {
   const [isLoading, setLoader] = useState(true);
-  const [Clans, setClans] = useState([]);
+  const [clans, setClans] = useState([]);
 
   async function getAllClans() {
     const allClansPromises = ClanConstants.allClans.map(async clan => {
@@ -33,7 +33,7 @@ export function ClansListPage(props) {
       <div className="container">
         { isLoading && <CardLoader/> }
 
-        { Clans.filter(clan => clan.clan === props.currClan).map(clan => {
+        { clans.filter(clan => clan.clan === props.currClan).map(clan => {
             return (
               <Card
                 key={clan.id}
@@ -54,7 +54,7 @@ export function ClansListPage(props) {
         { isLoading && <CardLoader/> }
 
         {
-          Clans.filter(clan => clan.clan !== props.currClan).map(clan => {
+          clans.filter(clan => clan.clan !== props.currClan).map(clan => {
             return (
               <Card
                 key={clan.id}
