@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 
 import { BrowserRouter as Router, Route, } from 'react-router-dom';
 import { ClansListPage } from "./ClansListPage";
@@ -9,6 +9,7 @@ import { Navbar } from '../Components/Navbar/Navbar';
 import { SectionHeader } from '../Components/Section/SectionHeader/SectionHeader';
 import { TeamToggleButton } from '../Components/Button/TeamToggleButton/TeamToggleButton';
 import { Footer } from '../Components/Footer/Footer';
+// import { OutlineButton } from "../Components/Button/OutlineButton/OutlineButton";
 
 export function BaseLayout() {
   const [currClan, setCurrClan] = useState(ClanConstants.allClans[0]);
@@ -36,7 +37,7 @@ export function BaseLayout() {
       </div>
 
       <Route exact path="/" render={() => (<ClansListPage currClan={currClan}/>)}/>
-      <Route  path="/:id" component={ClanDetailsPage} />
+      <Route path="/:id" component={ClanDetailsPage} />
 
       <Footer/>
       </div>

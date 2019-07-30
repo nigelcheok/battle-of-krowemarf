@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer should render correctly with no props 1`] = `
+<div>
+  <div
+    style={
+      Object {
+        "height": "120px",
+      }
+    }
+  />
+  <div
+    style={
+      Object {
+        "backgroundColor": "rgb(248, 248, 248)",
+        "bottom": "0",
+        "padding": "30px 0",
+        "position": "absolute",
+        "width": "100%",
+      }
+    }
+  >
+    <div
+      className="container"
+    >
+      <div
+        style={
+          Object {
+            "color": "rgb(37, 39, 41)",
+            "fontWeight": "200",
+            "textAlign": "center",
+          }
+        }
+      >
+        Copyright © 2019 Nigel Cheok. All rights reserved.
+      </div>
+    </div>
+  </div>
+</div>
+`;

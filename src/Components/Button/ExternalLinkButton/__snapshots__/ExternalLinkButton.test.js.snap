@@ -3,30 +3,39 @@
 exports[`ExternalLinkButton should render correctly with name and description 1`] = `
 <a
   href="http://google.com"
+  rel="noopener noreferrer"
   target="_blank"
 >
   <button
-    className="btn btn-outline-dark font-weight-bold"
+    className="btn text-primary"
     type="button"
   >
     <div
       className="fab test mr-2"
     />
-    test
+    <div
+      className="underline-on-hover display-inline-block"
+    >
+      test
+    </div>
   </button>
 </a>
 `;
 
 exports[`ExternalLinkButton should render correctly with no props 1`] = `
 <a
+  rel="noopener noreferrer"
   target="_blank"
 >
   <button
-    className="btn btn-outline-dark font-weight-bold"
+    className="btn text-primary"
     type="button"
   >
     <div
       className="fab undefined mr-2"
+    />
+    <div
+      className="underline-on-hover display-inline-block"
     />
   </button>
 </a>
