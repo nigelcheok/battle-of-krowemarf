@@ -4,9 +4,13 @@ export function Loader() {
   const [isLoading, setLoader] = useState(true);
 
   useEffect( () => {
-    setTimeout(() => {
+    const timeout = setTimeout(() => {
       setLoader(false);
     }, 3000);
+
+    return function cleanup() {
+      clearTimeout(timeout);
+    };
   }, []);
 
   return (

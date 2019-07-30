@@ -18,7 +18,7 @@ export function BaseLayout() {
   }
 
   return (
-    <Router onUpdate={() => window.scrollTo(0, 0)}>
+    <Router>
       <div style={BaseLayoutStyle()}>
       <Navbar/>
 

@@ -35,6 +35,10 @@ export function ClanDetailsPage(routeInfo) {
   }
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     async function getClanDetails(clan) {
       const clanDetails = await ClanService.getClanDetails(clan);
       setClanDetails(clanDetails);
