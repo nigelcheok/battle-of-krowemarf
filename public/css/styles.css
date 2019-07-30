@@ -1,3 +1,7 @@
+body {
+    font-family: Apercu, "Proxima Nova W01", "Helvetica Neue", Calibri, Roboto, sans-serif !important;
+}
+
 .position-absolute {
     position: absolute;
 }
@@ -40,6 +44,10 @@
 .btn.btn-outline-primary.active {
     color: #fff;
     background-color: rgb(0, 0, 255) !important;
+}
+
+.btn.text-primary {
+    color: rgb(0, 0, 255) !important;
 }
 
 .shadow-on-hover {

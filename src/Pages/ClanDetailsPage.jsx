@@ -86,7 +86,7 @@ export function ClanDetailsPage(routeInfo) {
             <ExternalLinkButton
               id="github-link"
               icon="fa-github"
-              text={`${clan.ownerName}/${clan.repoName}`}
+              text={`Visit ${clan.ownerName}/${clan.repoName} on GitHub`}
               link={`https://github.com/${clan.ownerName}/${clan.repoName}`}
             />
           }
