@@ -58,6 +58,14 @@ body {
     box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
 }
 
+.underline-on-hover {
+    transition: .2s ease-out;
+}
+
+.underline-on-hover:hover {
+    text-decoration: underline !important;
+}
+
 .card {
     background-color: rgba(37,39,41,.01);
     border: 1px solid #dbdbdb;
