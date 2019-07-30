@@ -84,6 +84,7 @@ export function ClanDetailsPage(routeInfo) {
           <SectionSubheader text={`${ clan ? clan.clanName : ''} Clan Details`}/>
           { clan &&
             <ExternalLinkButton
+              id="github-link"
               icon="fa-github"
               text={`${clan.ownerName}/${clan.repoName}`}
               link={`https://github.com/${clan.ownerName}/${clan.repoName}`}

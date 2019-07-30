@@ -21,7 +21,7 @@ export function Card(props) {
               <div>
                 <h5 className="card-title mt-1" style={CardTitleStyle()}>{props.title}</h5>
                 <p className="card-text mt-1" style={CardDescriptionStyle()}>{props.description}</p>
-              </div>c
+              </div>
             </div>
             <CardFooter clanDetails={props.clanDetails}/>
           </div>

@@ -20,8 +20,8 @@ describe('on normal device', async () => {
 
     page.emulate({
       viewport: {
-        width: 800,
-        height: 600,
+        width: 1200,
+        height: 800,
       },
       userAgent: ''
     });
@@ -43,5 +43,11 @@ describe('on normal device', async () => {
     html = await page.$eval('#clan-header', e => e.innerHTML);
     expect(html).toBe('Vue War Room');
 
-  }, 16000);
+    await page.waitFor(5000);
+    page.click('#card-React');
+
+    await page.waitForSelector('#github-link');
+    await page.waitFor(5000);
+
+  }, 20000);
 });
