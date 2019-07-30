@@ -4,11 +4,11 @@ export function GroupButton(props) {
   return (
      <div className="display-inline-block mt-2 mt-lg-0">
       <div className="btn-group" role="group" aria-label="" style={ GroupButtonStyle() }>
-        <button type="button" className="btn btn-outline-dark font-weight-bold" disabled style={DisabledButtonStyle()}>
+        <button type="button" className="btn btn-outline-transparent font-weight-bold" disabled style={DisabledButtonStyle()}>
           <div className={`fa ${props.icon} fa-1x`} style={GroupButtonIconStyle()}/>
           { props.label }
         </button>
-        <button type="button" className="btn btn-outline-dark font-weight-bold" disabled style={DisabledButtonStyle()}>
+        <button type="button" className="btn btn-outline-transparent" disabled style={DisabledButtonStyle()}>
           { props.value }
           </button>
       </div>
