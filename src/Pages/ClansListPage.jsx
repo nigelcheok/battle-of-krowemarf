@@ -61,6 +61,7 @@ export function ClansListPage(props) {
                 title={clan.clan.clanName}
                 description={`By ${clan.clan.ownerName}`}
                 clanDetails={clan}
+                id={`card-${clan.clan.clanName}`}
               />
             )
           })

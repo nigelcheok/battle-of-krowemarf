@@ -105,7 +105,7 @@ export function ClanDetailsPage(routeInfo) {
         }
       </div>
 
-      <div className="container mt-4">
+      <div className="container">
         <div className="d-sm-flex justify-content-between align-items-end">
           <SectionSubheader text={`${ clan ? clan.clanName : ''} Clan Members`}/>
           <div>

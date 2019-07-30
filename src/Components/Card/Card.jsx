@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 export function Card(props) {
   return (
-    <div>
+    <div id={props.id}>
       { props.clanDetails &&
         <Link to={`/${props.clanDetails.clan.clanName.toLowerCase()}`} style={CardStyle()}>
           <div className={`card border-square mt-3 ${ props.disabled ? '' : 'shadow-on-hover'}`} style={props.disabled ? {cursor: 'default'} : {}}>
@@ -21,7 +21,7 @@ export function Card(props) {
               <div>
                 <h5 className="card-title mt-1" style={CardTitleStyle()}>{props.title}</h5>
                 <p className="card-text mt-1" style={CardDescriptionStyle()}>{props.description}</p>
-              </div>
+              </div>c
             </div>
             <CardFooter clanDetails={props.clanDetails}/>
           </div>
