@@ -8,6 +8,7 @@ import ClanConstants from '../Constants/ClanConstants';
 import { Navbar } from '../Components/Navbar/Navbar';
 import { SectionHeader } from '../Components/Section/SectionHeader/SectionHeader';
 import { TeamToggleButton } from '../Components/Button/TeamToggleButton/TeamToggleButton';
+import { Footer } from '../Components/Footer/Footer';
 
 export function BaseLayout() {
   const [currClan, setCurrClan] = useState(ClanConstants.allClans[0]);
@@ -36,8 +37,8 @@ export function BaseLayout() {
       <Route exact path="/" render={() => (<ClansListPage currClan={currClan}/>)}/>
       <Route  path="/:id" component={ClanDetailsPage} />
 
-      <div className="mb-5"/>
-
+      {/*<div className="mb-5"/>*/}
+      <Footer/>
     </Router>
   );
 
