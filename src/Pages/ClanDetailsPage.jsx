@@ -29,7 +29,7 @@ export function ClanDetailsPage(routeInfo) {
     return undefined;
   }
 
-    function handleScroll() {
+  function handleScroll() {
     if (Math.ceil(window.innerHeight + document.documentElement.scrollTop + 100) < document.documentElement.offsetHeight) return;
     setFetcher(true);
   }
@@ -56,6 +56,10 @@ export function ClanDetailsPage(routeInfo) {
       getClanDetails(clan);
     }
     window.addEventListener('scroll', handleScroll);
+
+    return function cleanup() {
+      window.removeEventListener('scroll', handleScroll)
+    }
   }, [clan]);
 
   useEffect(() => {
@@ -135,8 +139,10 @@ export function ClanDetailsPage(routeInfo) {
             </div>
 
             { isFetching &&
-              <div className="d-flex justify-content-center">
-              <Loader/>
+              <div className="mr-n3">
+                <div className="d-flex justify-content-center">
+                  <Loader/>
+                </div>
               </div>
             }
           </div>
