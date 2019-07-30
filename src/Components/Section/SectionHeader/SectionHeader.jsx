@@ -2,7 +2,7 @@ import React from 'react';
 
 export function SectionHeader(props) {
  return (
-   <div style={SectionHeaderStyle()}>
+   <div id={props.id} style={SectionHeaderStyle()}>
      { props.text }
    </div>
  );
