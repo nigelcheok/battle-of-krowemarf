@@ -30,7 +30,7 @@ export function ClanDetailsPage(routeInfo) {
   }
 
     function handleScroll() {
-    if (Math.ceil(window.innerHeight + document.documentElement.scrollTop) < document.documentElement.offsetHeight) return;
+    if (Math.ceil(window.innerHeight + document.documentElement.scrollTop + 100) < document.documentElement.offsetHeight) return;
     setFetcher(true);
   }
 
@@ -156,7 +156,6 @@ export function ClanDetailsPage(routeInfo) {
           </div>
         }
       </div>
-
     </div>
   );
 }

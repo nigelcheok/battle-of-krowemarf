@@ -19,6 +19,7 @@ export function BaseLayout() {
 
   return (
     <Router>
+      <div style={BaseLayoutStyle()}>
       <Navbar/>
 
       <div className="container">
@@ -26,7 +27,7 @@ export function BaseLayout() {
         <div className="d-sm-flex justify-content-between align-items-end">
           <SectionHeader text={`${currClan.clanName} War Room`}/>
           <div className="mt-3 mt-sm-0">
-            <div className="text-sm-right" style={SwitchTextStyle()}>
+            <div className="text-sm-right" style={AllianceSwitchTextStyle()}>
                Switch Alliance
             </div>
             <TeamToggleButton teams={ClanConstants.allClans} currTeam={currClan} onClanChange={handleClanChange}/>
@@ -37,12 +38,19 @@ export function BaseLayout() {
       <Route exact path="/" render={() => (<ClansListPage currClan={currClan}/>)}/>
       <Route  path="/:id" component={ClanDetailsPage} />
 
-      {/*<div className="mb-5"/>*/}
       <Footer/>
+      </div>
     </Router>
   );
 
-  function SwitchTextStyle() {
+  function BaseLayoutStyle() {
+    return {
+      position: 'relative',
+      minHeight: '100vh',
+    }
+  }
+
+  function AllianceSwitchTextStyle() {
     return {
       textTransform: 'uppercase',
       fontSize: '.8rem',
