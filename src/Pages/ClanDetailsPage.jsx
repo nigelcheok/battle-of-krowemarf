@@ -138,7 +138,7 @@ export function ClanDetailsPage(routeInfo) {
               }
             </div>
 
-            { isFetching &&
+            { !isLoading && isFetching &&
               <div className="mr-3">
                 <div className="d-flex justify-content-center">
                   <Loader/>
