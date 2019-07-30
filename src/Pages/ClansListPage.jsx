@@ -16,7 +16,6 @@ export function ClansListPage(props) {
       return await clanDetails;
     });
     const allClans = await Promise.all(allClansPromises);
-    console.log(allClans);
     setClans(allClans);
     setLoader(false);
   }
