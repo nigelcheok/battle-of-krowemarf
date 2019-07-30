@@ -3,7 +3,7 @@ import React from 'react';
 export function Avatar(props) {
   return (
       <div className="card border-square mt-3 flex-grow-1 mr-3 shadow-on-hover" style={AvatarStyle()}>
-        <a href={props.link} target="_blank" style={AnchorStyle()}>
+        <a href={props.link} target="_blank" style={AnchorStyle()} rel="noopener noreferrer">
         <div className="card-body" style={AvatarBodyStyle()}>
           <img src={props.avatarUrl} style={AvatarImageStyle()} height="60" width="60" alt={props.name}/>
           <div className="mt-2" style={AvatarTitleStyle()}>
