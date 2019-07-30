@@ -147,6 +147,7 @@ export function ClanDetailsPage(routeInfo) {
         }
 
         { queryString !== '' &&
+        <div className="mr-n3">
           <div className="d-flex justify-content-between flex-wrap">
             {
               clanMembers.filter(member => member.name.toLowerCase().includes(queryString.toLowerCase())).map(member => {
@@ -162,6 +163,7 @@ export function ClanDetailsPage(routeInfo) {
               })
             }
           </div>
+        </div>
         }
       </div>
     </div>
