@@ -38,7 +38,7 @@ export function ClanDetailsPage(props) {
   }
 
   function handleScroll() {
-    if (Math.ceil(window.innerHeight + document.documentElement.scrollTop + 90) < document.documentElement.offsetHeight) return;
+    if (Math.ceil(window.innerHeight + document.documentElement.scrollTop + 200) < document.documentElement.offsetHeight) return;
     setFetcher(true);
   }
 
