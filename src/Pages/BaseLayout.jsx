@@ -1,11 +1,11 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 
 import { BrowserRouter as Router, Route, } from 'react-router-dom';
 import { ClansListPage } from "./ClansListPage";
 import { ClanDetailsPage } from "./ClanDetailsPage";
 
 import ClanConstants from '../Constants/ClanConstants';
-import { PageHeader } from "../Components/Page/PageHeader/PageHeader";
+import { PageHeader } from '../Components/Page/PageHeader/PageHeader';
 import { Navbar } from '../Components/Navbar/Navbar';
 import { Footer } from '../Components/Footer/Footer';
 
@@ -26,7 +26,7 @@ export function BaseLayout() {
       </div>
 
       <Route exact path="/" render={() => (<ClansListPage currClan={currClan} onClanChange={handleClanChange}/>)}/>
-      <Route path="/:id" component={ClanDetailsPage} />
+      <Route path="/:id" component={ClanDetailsPage}/>
 
       <Footer/>
       </div>
