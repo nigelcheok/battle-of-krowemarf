@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import ClanConstants from '../../../Constants/ClanConstants';
 import { SectionHeader } from '../../Section/SectionHeader/SectionHeader';
 import { TeamToggleButton } from '../../Button/TeamToggleButton/TeamToggleButton';
