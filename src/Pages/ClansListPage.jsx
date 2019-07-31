@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { PageHeader } from '../Components/Page/PageHeader/PageHeader';
 import { SectionSubheader } from '../Components/Section/SectionSubheader/SectionSubheader';
 import { Card } from '../Components/Card/Card';
 import { CardLoader } from '../Components/Loader/CardLoader/CardLoader';
@@ -26,6 +27,10 @@ export function ClansListPage(props) {
 
   return (
     <div>
+      <div className="container">
+        <PageHeader currClan={props.currClan} onClanChange={props.onClanChange}/>
+      </div>
+
       <div className="container">
         <SectionSubheader text="Allies"/>
       </div>

@@ -5,7 +5,7 @@ import { ClansListPage } from "./ClansListPage";
 import { ClanDetailsPage } from "./ClanDetailsPage";
 
 import ClanConstants from '../Constants/ClanConstants';
-import { PageHeader } from '../Components/Page/PageHeader/PageHeader';
+// import { PageHeader } from '../Components/Page/PageHeader/PageHeader';
 import { Navbar } from '../Components/Navbar/Navbar';
 import { Footer } from '../Components/Footer/Footer';
 
@@ -21,12 +21,13 @@ export function BaseLayout() {
       <div style={BaseLayoutStyle()}>
       <Navbar/>
 
-      <div className="container">
-        <PageHeader currClan={currClan} onClanChange={handleClanChange}/>
-      </div>
+      {/*<div className="container">*/}
+        {/*<PageHeader currClan={currClan} onClanChange={handleClanChange}/>*/}
+      {/*</div>*/}
 
       <Route exact path="/" render={() => (<ClansListPage currClan={currClan} onClanChange={handleClanChange}/>)}/>
-      <Route path="/:id" component={ClanDetailsPage}/>
+      <Route exact path="/:id" render={() => (<ClanDetailsPage currClan={currClan} onClanChange={handleClanChange}/>)}/>
+      {/*<Route path="/:id" component={ClanDetailsPage}/>*/}
 
       <Footer/>
       </div>

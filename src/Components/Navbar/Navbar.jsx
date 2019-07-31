@@ -34,7 +34,5 @@ function BrandTextStyle() {
     display: 'inline-block',
     fontSize: '20px',
     fontWeight: '700',
-    // textTransform: 'uppercase',
-    letterSpacing: '.5px',
   }
 }
