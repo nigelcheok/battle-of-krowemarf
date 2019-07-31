@@ -3,7 +3,7 @@
 The Battle of the 3 Clans, React, Vue and Angular.
 Choose your alliance, check out statistics and see clan members.
 
-URL: https://protected-atoll-67595.herokuapp.com/
+URL: http://wework.nigelcheok.com
 
 ## Available Scripts
 
