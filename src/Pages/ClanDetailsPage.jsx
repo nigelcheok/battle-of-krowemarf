@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { PageHeader } from '../Components/Page/PageHeader/PageHeader';
 import { SectionSubheader } from '../Components/Section/SectionSubheader/SectionSubheader';
 import { Card } from '../Components/Card/Card';
 import { Loader } from '../Components/Loader/Loader';
@@ -12,7 +13,7 @@ import { ClanService } from '../Services/ClanService';
 import { UserFactory } from '../Factories/UserFactory';
 import parseLinkHeader from 'parse-link-header';
 
-export function ClanDetailsPage(routeInfo) {
+export function ClanDetailsPage(props) {
   const [isLoading, setLoader] = useState(true);
   const [clanDetails, setClanDetails] = useState(undefined);
   const [clanMembers, setClanMembers] = useState([]);
@@ -20,8 +21,8 @@ export function ClanDetailsPage(routeInfo) {
   const [isFetching, setFetcher] = useState(false);
   const [queryString, setQueryString] = useState('');
 
-  const clanRouteId = routeInfo.match.params.id;
-  const clan = getClan(clanRouteId);
+  const clanRoute = window.location.pathname.split('/')[1];
+  const clan = getClan(clanRoute);
 
   function getClan(clanRouteId) {
     const clanInfo = ClanConstants.allClans.filter(clan => clan.clanName.toLowerCase() === clanRouteId);
@@ -80,13 +81,17 @@ export function ClanDetailsPage(routeInfo) {
   return (
     <div>
       <div className="container">
+        <PageHeader currClan={props.currClan} onClanChange={props.onClanChange}/>
+      </div>
+
+      <div className="container">
         <div className="d-sm-flex justify-content-between align-items-end">
           <SectionSubheader text={`${ clan ? clan.clanName : ''} Clan Details`}/>
           { clan &&
             <ExternalLinkButton
               id="github-link"
               icon="fa-github"
-              text={`${clan.ownerName}/${clan.repoName}`}
+              text={`Visit ${clan.ownerName}/${clan.repoName} on GitHub`}
               link={`https://github.com/${clan.ownerName}/${clan.repoName}`}
             />
           }
@@ -147,6 +152,7 @@ export function ClanDetailsPage(routeInfo) {
         }
 
         { queryString !== '' &&
+        <div className="mr-n3">
           <div className="d-flex justify-content-between flex-wrap">
             {
               clanMembers.filter(member => member.name.toLowerCase().includes(queryString.toLowerCase())).map(member => {
@@ -162,6 +168,7 @@ export function ClanDetailsPage(routeInfo) {
               })
             }
           </div>
+        </div>
         }
       </div>
     </div>

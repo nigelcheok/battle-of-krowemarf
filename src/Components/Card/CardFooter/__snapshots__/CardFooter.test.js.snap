@@ -3,22 +3,14 @@
 exports[`CardFooter should render correctly with no props 1`] = `
 <div
   className="card-footer"
-  style={
-    Object {
-      "borderTop": "0",
-    }
-  }
+  style={Object {}}
 />
 `;
 
 exports[`CardFooter should render correctly with props clanDetails 1`] = `
 <div
   className="card-footer"
-  style={
-    Object {
-      "borderTop": "0",
-    }
-  }
+  style={Object {}}
 >
   <div>
     <GroupButton
@@ -26,15 +18,39 @@ exports[`CardFooter should render correctly with props clanDetails 1`] = `
       label="Stars"
       value={1}
     />
+    <div
+      style={
+        Object {
+          "display": "inline-block",
+          "padding": "0 20px",
+        }
+      }
+    />
     <GroupButton
       icon="fa-exclamation-circle"
       label="Issues"
       value={3}
     />
+    <div
+      style={
+        Object {
+          "display": "inline-block",
+          "padding": "0 20px",
+        }
+      }
+    />
     <GroupButton
       icon="fa-code-branch"
       label="Forks"
       value={2}
+    />
+    <div
+      style={
+        Object {
+          "display": "inline-block",
+          "padding": "0 20px",
+        }
+      }
     />
     <GroupButton
       flipIcon={true}

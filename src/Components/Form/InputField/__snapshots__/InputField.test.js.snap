@@ -5,6 +5,11 @@ exports[`InputField should render correctly with no props 1`] = `
   className="form-control border-square"
   onChange={[Function]}
   placeholder="Search for user"
+  style={
+    Object {
+      "minWidth": "300px",
+    }
+  }
   type="text"
 />
 `;
@@ -14,6 +19,11 @@ exports[`InputField should render correctly with props 1`] = `
   className="form-control border-square"
   onChange={[Function]}
   placeholder="Search for user"
+  style={
+    Object {
+      "minWidth": "300px",
+    }
+  }
   type="text"
 />
 `;

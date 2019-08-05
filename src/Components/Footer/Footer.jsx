@@ -33,7 +33,8 @@ function FooterContainerStyle() {
 
 function FooterContainerTextStyle() {
   return {
-    color: 'rgb(142, 142, 143)',
+    color: 'rgb(37, 39, 41)',
     textAlign: 'center',
+    fontWeight: '200'
   }
 }

@@ -12,6 +12,7 @@ exports[`Avatar should render correctly with name and description 1`] = `
   }
 >
   <a
+    rel="noopener noreferrer"
     style={
       Object {
         "textDecoration": "none",
@@ -74,6 +75,7 @@ exports[`Avatar should render correctly with no props 1`] = `
   }
 >
   <a
+    rel="noopener noreferrer"
     style={
       Object {
         "textDecoration": "none",

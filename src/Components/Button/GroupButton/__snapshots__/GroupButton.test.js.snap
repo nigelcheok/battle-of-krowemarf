@@ -15,7 +15,7 @@ exports[`GroupButton should render correctly with label and value 1`] = `
     }
   >
     <button
-      className="btn btn-outline-dark font-weight-bold"
+      className="btn btn-outline-transparent font-weight-bold"
       disabled={true}
       style={
         Object {
@@ -36,7 +36,7 @@ exports[`GroupButton should render correctly with label and value 1`] = `
       test
     </button>
     <button
-      className="btn btn-outline-dark font-weight-bold"
+      className="btn btn-outline-transparent"
       disabled={true}
       style={
         Object {
@@ -66,7 +66,7 @@ exports[`GroupButton should render correctly with no props 1`] = `
     }
   >
     <button
-      className="btn btn-outline-dark font-weight-bold"
+      className="btn btn-outline-transparent font-weight-bold"
       disabled={true}
       style={
         Object {
@@ -86,7 +86,7 @@ exports[`GroupButton should render correctly with no props 1`] = `
       />
     </button>
     <button
-      className="btn btn-outline-dark font-weight-bold"
+      className="btn btn-outline-transparent"
       disabled={true}
       style={
         Object {

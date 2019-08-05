@@ -7,8 +7,8 @@ export function Navbar() {
     <nav className="navbar navbar-expand-lg navbar-light bg-white" style={NavbarStyle()}>
       <div className="container d-flex align-items-center">
         <Link className="navbar-brand" to="/">
-          <img src={Logo} height="27" style={LogoStyle()} alt="logo"/>
-          <span style={BrandTextStyle()}>· Battle of Krowemarf</span>
+          {/*<img src={Logo} height="24" style={LogoStyle()} alt="logo"/>*/}
+          <span style={BrandTextStyle()}>Battle of Krowemarf</span>
         </Link>
       </div>
     </nav>
@@ -34,7 +34,5 @@ function BrandTextStyle() {
     display: 'inline-block',
     fontSize: '20px',
     fontWeight: '700',
-    // textTransform: 'uppercase',
-    letterSpacing: '.5px',
   }
 }
